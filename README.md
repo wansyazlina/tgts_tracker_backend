@@ -60,7 +60,7 @@ tgts_tracker/
 └── README.md
 ```
 
-##📌 Sample API Calls
+## 📌 Sample API Calls
 
 ### Create Customer
 
@@ -90,23 +90,23 @@ POST /alert
 }
 ```
 
-###📊 Aggregation Example
+### 📊 Aggregation Example
 
 The system includes a pipeline to return dashboard labels + alert count.
 
-###🔧 Required Index
+### 🔧 Required Index
 
 TTL index for alerts:
 db.alerts.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 })
 
-###🗂 Sharding Demo (Logical)
+### 🗂 Sharding Demo (Logical)
 sh.enableSharding("tgts_tracker")
 sh.shardCollection("tgts_tracker.customers", { _id: "hashed" })
 sh.status()
 
 (These are shown for assignment demonstration purposes only)
 
-##📄 License
+## 📄 License
 
 This is project is created for the submission for TGTS Tracker project- Code and documentation is written by Wan Syazlina bt. Wan Aasim
 
