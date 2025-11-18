@@ -97,12 +97,17 @@ The system includes a pipeline to return dashboard labels + alert count.
 ### 🔧 Required Index
 
 TTL index for alerts:
+```
 db.alerts.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 })
+```
 
 ### 🗂 Sharding Demo (Logical)
+
+```
 sh.enableSharding("tgts_tracker")
 sh.shardCollection("tgts_tracker.customers", { _id: "hashed" })
 sh.status()
+```
 
 (These are shown for assignment demonstration purposes only)
 
